@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS Template</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <h2>Hello World 2.0</h2>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <a name="ToDo" onclick="set(this)"><li>ToDo</li></a>
+        <a name="Department"  onclick="set(this)"><li>Department</li></a>
+        <a name="AboutUs"  onclick="set(this)"><li>About Us</li></a>
+        <a name="ContactUs"  onclick="set(this)"><li>Contact Us</li></a>
+      </ul>
+    </nav>
+
+    <article>
+      <div class="articleinfo" id="ToDo">
+        <input type="text"  id="dropdown" name="dropdown-content" value=""  onkeyup="displayTask(this)">
+        <button id="btn1" type="button" >Search</button>
+        <button id="btn" type="button">ADD</button>
+        <ul id="dropdown-content">
+          <li><a href="#">Adele</a></li>
+  <li><a href="#">Agnes</a></li>
+  <li><a href="#">Billy</a></li>
+  <li><a href="#">Bob</a></li>
+  <li><a href="#">Calvin</a></li>
+  <li><a href="#">Christina</a></li>
+  <li><a href="#">Cindy</a></li>
+        </ul>
+      </div>
+      <div class="articleinfo" id="Department">
+        <h3>Department</h3>
+      </div>
+      <div class="articleinfo" id="AboutUs">
+        <h3>About</h3>
+      </div>
+      <div class="articleinfo" id="ContactUs">
+        <h3>Contact us</h3>
+      </div>
+
+    </article>
+
+  </section>
+
+  <footer>
+    <p>Contact us</p>
+  </footer>
+
+</body>
+<script>
+function set(element){
+  HideAll(element);
+  document.getElementById(element.name).style.display="block";
+}
+function HideAll(){
+  var a=document.getElementsByClassName("articleinfo");
+  for(var i=0;i<a.length;i++){
+    a[i].style.display="none";;
+  }
+}
+function displayTask(){
+  var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("dropdown");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("dropdown-content");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+
+}
+</script>
+</html>
