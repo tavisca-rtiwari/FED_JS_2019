@@ -25,18 +25,17 @@
 
     <article>
       <div class="articleinfo" id="ToDo">
-        <input type="text"  id="dropdown" name="dropdown-content" value=""  onkeyup="displayTask(this)">
+        <input type="text"  list="suggest" id="dropdown" name="dropdown-content" value=""  onkeyup="displayTask(this)">
         <button id="btn1" type="button" >Search</button>
-        <button id="btn" type="button">ADD</button>
-        <ul id="dropdown-content">
-          <li><a href="#">Adele</a></li>
-  <li><a href="#">Agnes</a></li>
-  <li><a href="#">Billy</a></li>
-  <li><a href="#">Bob</a></li>
-  <li><a href="#">Calvin</a></li>
-  <li><a href="#">Christina</a></li>
-  <li><a href="#">Cindy</a></li>
-        </ul>
+        <button id="btn" type="button" onclick="setValue(this)">ADD</button>
+
+          <datalist id = "suggest">
+          </datalist>
+<div class="final">
+  <ul id="dropdown-content" >
+  </ul>
+</div>
+
       </div>
       <div class="articleinfo" id="Department">
         <h3>Department</h3>
@@ -57,33 +56,5 @@
   </footer>
 
 </body>
-<script>
-function set(element){
-  HideAll(element);
-  document.getElementById(element.name).style.display="block";
-}
-function HideAll(){
-  var a=document.getElementsByClassName("articleinfo");
-  for(var i=0;i<a.length;i++){
-    a[i].style.display="none";;
-  }
-}
-function displayTask(){
-  var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("dropdown");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("dropdown-content");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-
-}
-</script>
+<script src="script.js" charset="utf-8"></script>
 </html>
