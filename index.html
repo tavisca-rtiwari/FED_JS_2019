@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS Template</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <h2>Hello World 2.0</h2>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <a name="ToDo" onclick="set(this)"><li>ToDo</li></a>
+        <a name="Department"  onclick="set(this)"><li>Department</li></a>
+        <a name="AboutUs"  onclick="set(this)"><li>About Us</li></a>
+        <a name="ContactUs"  onclick="set(this)"><li>Contact Us</li></a>
+      </ul>
+    </nav>
+
+    <article>
+      <div class="articleinfo" id="ToDo">
+        <input type="text"  list="suggest" id="dropdown" name="dropdown-content" value=""  onkeyup="displayTask(this)">
+        <button id="btn1" type="button" >Search</button>
+        <button id="btn" type="button" onclick="setValue(this)">ADD</button>
+
+          <datalist id = "suggest">
+          </datalist>
+<div class="final">
+  <ul id="dropdown-content" >
+  </ul>
+</div>
+
+      </div>
+      <div class="articleinfo" id="Department">
+        <h3>Department</h3>
+      </div>
+      <div class="articleinfo" id="AboutUs">
+        <h3>About</h3>
+      </div>
+      <div class="articleinfo" id="ContactUs">
+        <h3>Contact us</h3>
+      </div>
+
+    </article>
+
+  </section>
+
+  <footer>
+    <p>Contact us</p>
+  </footer>
+
+</body>
+<script src="script.js" charset="utf-8"></script>
+</html>
